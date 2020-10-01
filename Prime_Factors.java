@@ -5,10 +5,15 @@ class Prime_Factors{
 		int n,i,j;
 		n=sc.nextInt();
 		for(i=2;i<=n;i++){
-            for(j=1;j<=i;j++){ 
-			   if(i%j==0){if(n%i==0){n=n/i;System.out.print(i +" ");}}
-
-			}   	
+			int flag=0;
+           		 for(j=2;j<=i/2;j++){ 										//every number is divisible by 1...start with j=2						
+			   if(i%j==0)
+			   {
+				   flag=1;
+				   break;										//if a number has no factor within half of itself ...its prime
+			}  
+			if(flag==0)
+				System.out.println(i);
 		}
 
 	}
